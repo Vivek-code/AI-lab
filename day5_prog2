@@ -1,0 +1,6 @@
+cart_product([],_,[]).
+cart_product([H|T],List2,Product):-findall((H,Y),member(Y,List2),Pairs),cart_product(T,List2,RestProduct),append(Pairs,RestProduct,Product).
+
+
+
+  query = cart_product([1,2],[a,b],Product).
