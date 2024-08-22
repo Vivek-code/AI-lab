@@ -1,0 +1,13 @@
+and(A,B):-A,B.
+or(A,B):-A;B.
+nand(A,B):-not(and(A,B)).
+nor(A,B):-not(or(A,B)).
+xor(A,B):-or(and(A,not(B)),and(B,not(A))).
+xnor(A,B):-or(and(A,B),and(not(A),not(B))).
+equ(A,B):-or(and(A,B),and(not(A),not(B))).
+bind(true).
+bind(fail).
+table(A,B,Exp):-bind(A),bind(B),do(A,B,Exp),fail.
+do(A,B,_):-write('A'),write(' '),write('B'),write(' '),fail.
+do(_,_,Exp):-Exp,!,write(true),nl.
+do(_,_,_):-write(fail),nl.
