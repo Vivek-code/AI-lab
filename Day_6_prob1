@@ -1,0 +1,10 @@
+color(red).
+color(green).
+color(blue).
+different_color(X,Y):-color(X),color(Y),X!=Y.
+edge(a,b).
+edge(a,c).
+edge(b,c).
+edge(b,d).
+edge(c,d).
+graph_coloring(A,B,C,D):-different_color(A,B),different_color(A,C),different_color(B,C),different_color(B,D),different_color(C,D).
