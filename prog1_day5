@@ -11,3 +11,13 @@ table(A,B,Exp):-bind(A),bind(B),do(A,B,Exp),fail.
 do(A,B,_):-write('A'),write(' '),write('B'),write(' '),fail.
 do(_,_,Exp):-Exp,!,write(true),nl.
 do(_,_,_):-write(fail),nl.
+Smart Classroom is one of the most potential solutions for smart education in the 21st century. 
+By using incredible technologies such as the Internet of Things, Artificial Intelligence, Cloud Computing, classrooms nowadays can analyze 
+and evaluate the learning performance continuously. Understanding this opportunity, we build a complete management system for smart classroom applied 
+computer vision. Using the smart classroom solution, students can request for absence and be accepted or rejected online by their teachers. Besides, the dashboard 
+also shows the summary of the present students and absent ones. Next, the managers or teachers can download the attendance list for further reports, the dashboard can filter by week,
+months, year, and each student. In addition, face recognition technology can use in security that automatically detects abnormal intrusions and notify the guards on time. Finally,
+the system can track the student's emotions and visualize them on the chart in real-time. Based on this information, managers or teachers can evaluate their teaching performance. Our
+contributions focus on three following main points. Firstly, our proposed system can summarize data from several devices, analyze and visualize them on an interactive dashboard. In addition 
+to the management system, the dashboard also has a user-friendly interface that can help managers and teachers who are unfamiliar with technologies can simply operate them. Finally, the AI Modules 
+in the classroom are also utilized and improved. Specifically, the emotion detection model has an accuracy of 72.3% which is greater than the other applications.
