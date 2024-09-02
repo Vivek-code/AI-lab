@@ -1,6 +1,36 @@
-cart_product([],_,[]).
+
+
+([],_,[]).
 cart_product([H|T],List2,Product):-findall((H,Y),member(Y,List2),Pairs),cart_product(T,List2,RestProduct),append(Pairs,RestProduct,Product).
 
 
 
   query = cart_product([1,2],[a,b],Product).
+
+
+
+
+
+
+
+
+INSERT INTO PRODUCT (Product_Id, Product_Code, Category_Id, Product_Type, Product_Description, Product_Group, Product_ListPrice, UOM)
+VALUES
+(6, 'EC001', 9, 'O', 'Engine Cooling & Accessories', 'OT', 55000, 'NO'),
+(7, 'EN001', 9, 'O', 'Engines', 'OT', 150000, 'NO'),
+(8, 'PR001', 9, 'C', 'Pistons & Rings', 'OT', 20000, 'NO'),
+(9, 'IG001', 9, 'C', 'Samsung M04 Smartphone', 'MB', 22000, 'NO'),
+(10, 'MB001', 6, 'C', 'Redmi 12C Smartphone', 'MB', 12000, 'NO'),
+(11, 'MB002', 6, 'C', 'DEL Tablet', 'CO', 14000, 'NO'),
+(12, 'CO001', 6, 'C', '', 'CO', 57000, 'NO'),
+(13, 'CO002', 6, 'C', 'Lenovo Laptop', 'CO', 55000, 'NO'),
+(14, 'C0003', 6, 'C', 'HP Desktop', 'EE', 30000, 'NO'),
+(15, 'EL001', 7, 'L', 'Satellite Equipment', 'EE', 20000, 'NO'),
+(16, 'EL002', 7, 'C', 'Projectors', 'EE', 25000, 'NO'),
+(17, 'EL003', 7, 'C', 'Televisions', 'HH', 35000, 'NO'),
+(18, 'HH001', 8, 'C', 'Sofas and Sofa sets', 'HH', 12000, 'NO'),
+(20, 'HH002', 8, 'C', 'Study desks', 'HH', 6000, 'NO'),
+(21, 'HH003', 8, 'C', 'Office Chairs', 'HH', 3000, 'NO'),
+(22, 'HH004', 8, 'C', 'Dinnerware', 'HH', 4000, 'NO'),
+(23, 'HH005', 8, 'C', 'Cookware', 'HH', 500, 'NO'),
+(24, 'HH006', 8, 'C', 'Lunchboxes', '', 0, 'NO');
