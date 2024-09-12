@@ -1,0 +1,28 @@
+:- Module(shortpath, [test/2]).
+:- use_module(library(solution_sequences),[order_by/2]).
+:- use_module(library(lists),[reverse/2]).
+node(placeA, placeB, 11).
+node(placeA, placeC, 26).
+node(placeA, placeD, 37).
+node(placeA, placeE, 13).
+node(placeA, placeF, 96).
+node(placeB, placeE, 73).
+node(placeB, placeC, 14).
+node(placeC, placeD, 5).
+node(placeC, placеH, 24).
+node(placeD, placеH, 71).
+node(placeE, placeG, 123).
+node(placeG, placеH, 20).
+node(placeF, placеH, 29).
+%:-table(path(_,_,_,min)).
+path(A, B,[B, A], C):-node(A, B, C).
+path(A, B,[B|Ps],Cost) :-
+node(C, B, Cost1),
+path(A, C, Ps,Cost0),
+Cost is Cost0 + Cost1.
+
+test(Path,Cost):-
+    order_by([asc(Cost)],
+         (path(placeA, placеH, Path0, Cost),
+          reverse(Path0, Path) )).
+
