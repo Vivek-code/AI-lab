@@ -62,3 +62,13 @@ test (Path, Cost) :-
 order_by([asc (Cost)],
 (path(placeA, placеH, Path, Cost),
 reverse (Path, Path) )).
+
+
+:- module (shortpath, [test/2]).
+:- use_module(library(solution_sequences), [order_by/2]).
+:- use_module(library (lists), [reverse/2]).
+node (placeA, placeB, 11).
+node (placeA, placeC, 26).
+node (placeA, placeD, 37).
+node (placeA, placeE, 13).
+node (placeA, placeF, 96).
