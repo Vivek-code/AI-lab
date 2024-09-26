@@ -1,0 +1,22 @@
+feature(sparrow):-small,brown,chirp.
+feature(eagle):-large,brown,screech.
+feature(pigeon):-medium,grey,coos.
+feature(parrot):-medium,green, talks.
+small :- ask('Is the bird small?').
+large :- ask('In the bird large?').
+medium :- ask('Is the bird medium?').
+
+brown :- ask('In the bird brown?').
+grey :- ask('Is the bird grey?').
+green :-ask('Is the bird green?').
+
+chirp :- ask('Does the bird chirp?').
+screech :-ask('Does the bird screech?').
+coos:- ask('Does the bird coo?').
+talks:- ask('Does the bird talk?').
+
+ask(Question):- write(Question), nl, read(Response),
+    (Response ==yes -> true; Response == no -> false; fail).
+recog_bird:-feature(Bird),format('The bird is a:~w~n', [Bird]),!.
+recog_bird:- write('No matching bird found. Try again.').
+start:-write('Guess the bird!'),nl,recog_bird.
